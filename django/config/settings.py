@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # 우리가 새로 만든 'blog'패키지가
+    # Django의 app으로 동작하도록 등록
+
     'blog',
 ]
 
