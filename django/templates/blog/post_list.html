@@ -5,10 +5,19 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DjangoGrils Tutorial</title>
+    <title>DjangoGirls Blog</title>
 </head>
 <body>
-    <h1>Post List</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet cumque debitis distinctio esse fugiat illum iste nulla porro quod, quos sint sit tenetur? Architecto beatae deleniti deserunt dolore porro.</p>
+   <div>
+            <h1><a href="">Django Girls Blog</a></h1>
+        </div>
+
+        {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }} </p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            {{ post.content|linebreaksbr }}
+        </div>
+        {% endfor %}
 </body>
 </html>
