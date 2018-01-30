@@ -1,14 +1,26 @@
+{% load static %}
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DjangoGirls Tutorial</title>
+    <title>DjangoGirls Blog</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '/css/blog.css' %}">
+    <!--'/'로 시작하면 root folder에서 시작함-->
 </head>
 <body>
-<h1>Post Detail</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores deleniti eveniet, expedita explicabo laudantium maxime nihil omnis reprehenderit sint soluta suscipit ut vero voluptas. A asperiores ipsa laborum molestias mollitia?</p>
+<div class="container">
+    <div class="header">
+        <h1><a href="">Django Girls Blog</a></h1>
+    </div>
+    <div class="post">
+        <p class="post-date">published: {{ post.published_date }} </p>
+        <h2 class="post-title"><a href="">{{ post.title }}</a></h2>
+        <p class="post-content">{{ post.content|linebreaksbr }}</p>
+    </div>
+</div>
 </body>
 </html>
